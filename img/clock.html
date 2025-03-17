@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'poppins', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: bisque;
+            height: 100vh; /* Ensure body takes full height of the viewport */
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            width: 210px;
+            height: 60px;
+            background-color: brown;
+            color: aqua;
+            border-radius: 7px;
+            box-shadow: 3px 2px 2px #000000;
+        }
+
+        .hours, .minutes, .seconds {
+            font-size: 25px;
+            font-weight: bold;
+            border: 1px solid aqua;
+            background-color: black;
+            border-radius: 5px;
+            padding: 1px 5px;
+        }
+
+        .dots {
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <span class="hours" id="hours">00</span>
+        <span class="dots"><p>:</p></span>
+        <span class="minutes" id="minutes">00</span>
+        <span class="dots"><p>:</p></span>
+        <span class="seconds" id="seconds">00</span>
+    </div>
+    <script>
+        function showtime() {
+            var now = new Date();
+            var hours = now.getHours();
+            var minutes = now.getMinutes();
+            var seconds = now.getSeconds();
+
+            document.getElementById("hours").innerHTML = hours < 10 ? "0" + hours : hours;
+            document.getElementById("minutes").innerHTML = minutes < 10 ? "0" + minutes : minutes;
+            document.getElementById("seconds").innerHTML = seconds < 10 ? "0" + seconds : seconds;
+        }
+        setInterval(showtime, 1000);
+    </script>
+</body>
+</html>

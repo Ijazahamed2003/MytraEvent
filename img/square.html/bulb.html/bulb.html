@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            *{
+                margin:0;
+                padding:0;
+                box-sizing:border-box;
+                font-family:'poppins', sans-serif;
+            }
+            body{
+                height:100vh;
+                display:flex;
+                align-items:center;
+                justify-content:center; 
+            }
+            .bulb{
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                height:200px;
+                width:200px;
+            }
+            img{
+                height:200px;
+            }
+            .switch{
+                width:200px;
+                height:50px;
+                display:flex;
+                align-content:space-between;
+            }
+            button{
+                border:none;
+                background-color:orangered;
+                color:white;
+                padding:7px 15px;
+                cursor:pointer;
+            }
+            button:hover{
+                background-color:white;
+                color:#333333;
+            }
+            #on{
+                display:none;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="bulb">
+                <div id="off">
+                    <img src="img/bulb-off.png" alt="Bulb Off">
+                </div>
+                <div id="on">
+                    <img src="img/bulb-on.png" alt="Bulb On">
+                </div>
+            </div>
+            <div class="switch">
+                <button onclick="on()">ON</button>
+                <button onclick="off()">OFF</button>
+            </div>
+        </div>
+
+        <script>
+            var bulbOn = document.getElementById("on");
+            var bulbOff = document.getElementById("off");
+            function on() {
+                console.log("ON button clicked"); 
+                bulbOn.style.display = "block";
+                bulbOff.style.display = "none";       
+            }
+
+            function off() {
+                console.log("OFF button clicked"); 
+                bulbOn.style.display = "none";
+                bulbOff.style.display = "block";
+            }
+        </script>
+    </body>
+</html>
